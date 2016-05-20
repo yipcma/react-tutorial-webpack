@@ -4,7 +4,11 @@ const CommentForm = React.createClass({
   render() {
     return (
       <div className="commentForm">
-        Hello, world! I am a CommentForm.
+        <form className="commentForm">
+          <input type="text" placeholder="Your name" />
+          <input type="text" placeholder="Say something..." />
+          <input type="submit" value="Post" />
+        </form>
       </div>
     )
   }
