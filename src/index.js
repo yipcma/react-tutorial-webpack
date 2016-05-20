@@ -3,10 +3,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import CommentBox from './components/CommentBox'
 
-const data = [
-  {id: 1, author: 'Pete Hunt', text: 'This is one comment'},
-  {id: 2, author: 'Jordan Walke', text: 'This is *another* comment'}
-];
 
 // Render the main component into the dom
-ReactDOM.render(<CommentBox data={data} />, document.getElementById('app'));
+// AMAZING BUG: add http:// to url to prevent CORS errors
+
+ReactDOM.render(<CommentBox url="http://localhost:3000/db" pollInterval={2000} />, document.getElementById('app'));
