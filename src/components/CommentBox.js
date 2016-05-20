@@ -1,10 +1,14 @@
 import React from 'react'
+import CommentList from './CommentList'
+import CommentForm from './CommentForm'
 
 const CommentBox = React.createClass({
   render() {
     return (
       <div className="commentBox">
-        Hello, world! I am a CommentBox.
+        <h1>Comments</h1>
+        <CommentList />
+        <CommentForm />
       </div>
     )
   }
