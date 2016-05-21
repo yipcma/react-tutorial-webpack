@@ -21,7 +21,8 @@ const CommentForm = React.createClass({
     if (!text || !author) {
       return
     }
-    // TODO send request to server
+    // send request to server
+    this.props.onCommentSubmit({author: author, text: text})
     // if not using state, could just do form.reset()
     this.setState({author: '', text: ''})
   },
