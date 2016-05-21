@@ -12,7 +12,10 @@ const CommentBox = React.createClass({
 
 // be super careful about the type in setState. It should be array.
   handleCommentSubmit(data) {
-    axios.post(this.props.url, data).then(response => this.setState({data: this.state.data.concat([response.data])}))
+    data.id = Date.now()
+    const comments = this.state.data
+    this.setState({data: comments.concat([data])})
+    axios.post(this.props.url, data).then(response => this.setState({data: comments.concat([response.data])}))
   },
 
   getInitialState() {
